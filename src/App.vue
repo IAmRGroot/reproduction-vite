@@ -4,12 +4,8 @@
 
 <script lang="ts">
 import { useIp } from '@/compositions/ip';
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue';
 import Wrapper from './components/Wrapper.vue';
-
-const { fetchIp } = useIp();
-
-void fetchIp();
 
 export default defineComponent({
     components: { Wrapper },

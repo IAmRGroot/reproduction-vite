@@ -1,15 +1,11 @@
 import { defineConfig, UserConfigExport } from 'vite';
-import { createVuePlugin as vue2 } from 'vite-plugin-vue2';
 import { resolve } from 'path';
+import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default (): UserConfigExport => {
-    const plugins = [
-        vue2(),
-    ];
-
     return defineConfig({
-        plugins: plugins,
+        plugins: [vue()],
         root: 'src',
         base: '/',
         resolve: { alias: { '@': resolve(__dirname, './src') } },
