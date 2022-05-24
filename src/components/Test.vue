@@ -7,14 +7,21 @@
     </div>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts">
 import { useIp } from '@/compositions/ip';
+import { defineComponent } from '@vue/composition-api';
 
-interface Props {
-    value: number|string,
-}
+export default defineComponent({
+    props: {
+        value: {
+            type: [Number, String],
+            required: true,
+        },
+    },
+    setup() {
+        const { ip } = useIp();
 
-defineProps<Props>();
-
-const { ip } = useIp();
+        return { ip }
+    }
+})
 </script>

@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   node:
-    container_name: node
+    container_name: vite-node
     image: node:16
     restart: unless-stopped
     command: "/bin/bash -c \"trap : TERM INT; sleep infinity & wait\""

@@ -8,18 +8,23 @@
     </div>
 </template>
 
-
-<script lang="ts" setup>
+<script lang="ts">
 import { useIp } from '@/compositions/ip';
-import { watch } from '@vue/composition-api';
+import { defineComponent, watch } from '@vue/composition-api';
 import Test from './Test.vue';
 
-const { ip } = useIp();
-const edit_me = 'edit_me';
+export default defineComponent({
+    components: { Test },
+    setup() {
+        const { ip } = useIp();
+        const edit_me = 'edit_me';
 
-watch(() => ip.value, () => {
-    console.log(ip.value)
-}, {
-    immediate: true,
-});
+        watch(() => ip.value, () => {
+            console.log(ip.value)
+        }, {
+            immediate: true,
+        });
+        return { edit_me, ip }
+    }
+})
 </script>
