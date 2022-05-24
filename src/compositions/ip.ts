@@ -1,6 +1,6 @@
 import { ref } from "@vue/composition-api";
  
-const edit_me = 'edit me 2';
+const edit_me_first = 'edit me';
 
 const ip = ref(null as string|null);
 
@@ -11,6 +11,7 @@ const fetchIp = async () => {
 }
 
 export const useIp = () => ({
+    edit_me_first,
     ip,
     fetchIp,
 });

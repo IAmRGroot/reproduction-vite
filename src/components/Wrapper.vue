@@ -4,7 +4,7 @@
             :value="ip"
         />
 
-        {{ ip }} {{ edit_me }}
+        {{ ip }} {{ edit_me_second }}
     </div>
 </template>
 
@@ -17,14 +17,14 @@ export default defineComponent({
     components: { Test },
     setup() {
         const { ip } = useIp();
-        const edit_me = 'edit_me';
+        const edit_me_second = 'edit_me';
 
         watch(() => ip.value, () => {
             console.log(ip.value)
         }, {
             immediate: true,
         });
-        return { edit_me, ip }
+        return { edit_me_second, ip }
     }
 })
 </script>
